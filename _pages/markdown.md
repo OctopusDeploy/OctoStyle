@@ -86,7 +86,7 @@ The first header you include on a page must be a h2 header. The title of the pag
 
 ## Formatting text
 
-Bold text with `**` on both sides of text to create `**bold text**`: **bold text**.
+Bold text with `**` on both sides of the text to create `**bold text**`: **bold text**.
 
 Italicize text with `*` on both sides of text to create `*emphasized text*`: *emphasized text*.
 
@@ -107,6 +107,11 @@ Images should include alt text for accessibility:
 Control the size of the image in pixels by adding: `width=500`:
 
 	![A brief description of the image](images/image-name.png "width=500")
+  
+Add a caption below the image by appending the caption text:
+
+  	![A brief description of the image](images/image-name.png "width=500")*This is a caption*
+  
 
 ## Lists
 
@@ -190,11 +195,19 @@ There are generators online you can use to make this process a bit easier, for i
 
 ## Links
 
+Links are written with the following syntax: 
+
+`[Link text](http://www.octopus.com/docs/installation/index.md)`
+
+## Documentation 
+
 To link to other pages within the **documentation**, use the following syntax (include the full filename and extension):
 
 For more information, see the `[installation page](/docs/installation/index.md)` and review the `[installation requirements](/docs/installation/requirements.md)`.
 
 This will link to https://www.octopus.com/docs/installation and https://www.octopus.com/docs/installation/requirements.
+
+## Blog
 
 To link to other posts within the **blog**, use the following syntax (include the full filename and extension):
 

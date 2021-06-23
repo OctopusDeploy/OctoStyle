@@ -51,7 +51,7 @@ For more information, see [working with images](images.md).
 
 ## Proofread
 
-Proofread your work to make sure it's error free and validates with Docsync. Octopus has a Grammarly account that anybody can use that can help with clearing up simple mistakes.
+Proofread your work to make sure it's error free and validates with Docsync. Octopus has a Grammarly account that can help spot simple mistakes.
 
 ## Create a PR
 
@@ -61,7 +61,7 @@ When your work is ready, create a PR so the work can be reviewed, edited, schedu
 
 We use an in-house tool to convert the docs and the blog from markdown to HTML for publication on the web. 
 
-These are some of the common validation errors that will cause you PR to fail. If you see the build has failed check the following:
+These are some of the common validation errors that will cause your PR to fail. If you see the build has failed check the following:
 
 ### YAML front matter
 
@@ -73,4 +73,4 @@ Check you have only used lowercase characters, dashes (-) and full stops (.) in 
 
 ### Broken links
 
-Validation will fail if links that don't resolve are included. Check the links in your PR.
+Validation will fail if links that don't resolve are included.
