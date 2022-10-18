@@ -10,7 +10,7 @@ At Octopus Deploy, the written word is one of the primary tools we use to share 
 
 ## Why is a consistent voice important?
 
-We’re approaching 100 people working across different functions at Octopus Deploy. We all have our own personalities, focuses, and quirks, but when we share updates with our customers and the wider world we want those updates to feel like they’re coming from the same place and that they represent a common purpose.
+We’re more than 200 people working across different functions at Octopus Deploy. We all have our own personalities, focuses, and quirks, but when we share updates with our customers and the wider world we want those updates to feel like they’re coming from the same place and that they represent a common purpose.
 
 Having a consistent voice in our written communications is one way of conveying our shared goals as a company, and with a well-defined voice, we can avoid leaving customers scratching their heads because they don’t understand our colloquialisms, bad jokes, or out-of-date pop culture references.
 
