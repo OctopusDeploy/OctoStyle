@@ -11,25 +11,31 @@ Both the [Octopus blog](https://github.com/OctopusDeploy/blog) and the [Octopus 
 - [Filenames](#filenames)
 - [Files and directories](#files-and-directories)
 - [YAML headers](#yaml-headers)
-- [Table of contents](#table-of-contents)
+  - [YAML header (blog)](#yaml-header-blog)
+  - [YAML header (docs)](#yaml-header-docs)
 - [Headings](#headings)
 - [Formatting text](#formatting-text)
 - [Images](#images)
 - [Lists](#lists)
 - [Tables](#tables)
 - [Links](#links)
+- [Documentation](#documentation)
+- [Blog](#blog)
+  - [Anchor links](#anchor-links)
 - [Navigation paths](#navigation-paths)
 - [Code samples](#code-samples)
 - [Call-outs](#call-outs)
 - [Reuse text](#reuse-text)
-- [Referencing Docker images](#referencing-docker-images)
-- [Link to the Octopus Guides](#link-to-the-octopus-guides
-)
+  - [Referencing Docker images](#referencing-docker-images)
+    - [Example 1 - with tags](#example-1---with-tags)
+    - [Example 2 - without tags](#example-2---without-tags)
+- [Link to the Octopus Guides](#link-to-the-octopus-guides)
 - [Redirects](#redirects)
+- [Docs redirects](#docs-redirects)
 
 ## Filenames
 
-Markdown filenames are lowercase and end with `.md`. Use hyphens to separate words:
+Markdown filenames are lowercase and end with `.md` or `.mdx` for pages with includes. Use hyphens to separate words:
 
 - `installation.md`
 - `backup-and-restore.md`
@@ -66,23 +72,23 @@ tags: <!-- see blog/tags.txt for a comprehensive list of tags -->
 
 ```md
 ---
-title: Installation <!-- page title -->
-description: How to install the Octopus Server.
-position: 20 <!-- position of the document relative to the other documents in the same section -->
-hideInThisSection: true  <!-- Optional. Hides the automatic "In this section" section that lists child documents in the same section. Leave out if not needed. -->
-hideInThisSectionHeader: true <!-- Optional. Only hides the header for the "In this section" section -->
+layout: src/layouts/Default.astro
+pubDate: 2023-01-01 <!-- The date first published, don't update this -->
+modDate: 2023-01-01 <!-- Change this date to singal an update to search engines -->
+title: Getting started
+subtitle: An overview of Octopus Deploy concepts <!-- Optional: Shown below the title -->
+navTitle: Overview <!-- Optional: A shorter title for use in the navigation -->
+navSection: Getting started <!-- Optional: For pages with children, the section name -->
+description: <!-- Used for list pages, meta tags, and open graph -->
+navOrder: 5
 ---
 ```
-
-## Table of contents
-
-Use `!toc` within the body of a page to include a table of contents that lists the sections on the current page.
 
 ## Headings
 
 Use `##` to create h2 headers and `###` to create h3 headers.
 
-The first header you include on a page must be a h2 header. The title of the page comes from the title in the YAML block.
+The first header you include on a page must be a h2 header. The h1 title of the page comes from the title in the YAML block.
 
 ## Formatting text
 
@@ -325,6 +331,8 @@ When you use an include file in this way, you only need to update the text in on
 
 ### Referencing Docker images
 
+**Deprecated** this is no longer available for docs.
+
 When referencing docker images, use the syntax:
 
 `!docker-image <org/image:tag>`
@@ -377,15 +385,30 @@ https://octopus.com/docs/guides?application=PHP&buildServer=TeamCity&destination
 
 If you delete or rename a file in either the docs or blog repos, you must add a redirect for that file otherwise publishing will fail.
 
-Redirects are added to `docs/redirects.txt` and `blog/redirects.txt` files respectively.
+Blog redirects are added to `blog/redirects.txt`:
 
 The redirects.txt file looks like this:
 ```
 from-file-path -> to-file-path                 #DO NOT DELETE THIS LINE
-docs/page1.md -> docs/page2.md
+blog/page1.md -> blog/page2.md
 ```
-In the above example, `/docs/page1` is redirected to `/docs/page2`.
+In the above example, `/blog/page1` is redirected to `/blog/page2`.
 
 Add your redirect to the end of the file, after the redirect is added, the original file (`page1`) needs to be deleted from the repo.
 
+## Docs redirects
+
+Please use the Redirect layout and set the new destination page. The entire contents of a redirct file is the following YAML frontmatter:
+
+```
+---
+layout: src/layouts/Redirect.astro
+title: Redirect
+redirect: https://octopus.com/docs/security/fips-and-octopus-deploy
+pubDate:  2023-01-01
+navSearch: false
+navSitemap: false
+navMenu: false
+---
+```
 
